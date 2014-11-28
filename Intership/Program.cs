@@ -18,7 +18,7 @@ namespace Intership
                 var formatter = new BinaryFormatter();
                 formatter.Serialize(stream, toClone);
                 stream.Seek(0, SeekOrigin.Begin);
-                return (T)formatter.Deserialize(stream);
+                return (T)formatter.Deserialize(stream);    
             }
         }
     }
