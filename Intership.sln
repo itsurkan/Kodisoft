@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1Clone", "1Clone\1Clone.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomAPI_5", "RandomAPI_5\RandomAPI_5.csproj", "{77262919-5D3F-496E-A226-6D76C982B405}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "References6", "References6\References6.csproj", "{57215B54-BB49-4B7A-AC30-5028419929A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MutexUI_3_4", "MutexUI3\MutexUI_3_4.csproj", "{D8F4980A-7854-494C-AC42-5308E75AD237}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{77262919-5D3F-496E-A226-6D76C982B405}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77262919-5D3F-496E-A226-6D76C982B405}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77262919-5D3F-496E-A226-6D76C982B405}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57215B54-BB49-4B7A-AC30-5028419929A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57215B54-BB49-4B7A-AC30-5028419929A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57215B54-BB49-4B7A-AC30-5028419929A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57215B54-BB49-4B7A-AC30-5028419929A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8F4980A-7854-494C-AC42-5308E75AD237}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8F4980A-7854-494C-AC42-5308E75AD237}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8F4980A-7854-494C-AC42-5308E75AD237}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8F4980A-7854-494C-AC42-5308E75AD237}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
