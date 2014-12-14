@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Intership
+
+namespace _1Clone
 {
-
     public static class Func
     {
         public static T Clone<T>(this T toClone)
@@ -18,14 +16,14 @@ namespace Intership
                 var formatter = new BinaryFormatter();
                 formatter.Serialize(stream, toClone);
                 stream.Seek(0, SeekOrigin.Begin);
-                return (T)formatter.Deserialize(stream);    
+                return (T)formatter.Deserialize(stream);
             }
         }
     }
-   
+
     class Program
     {
-       
+
 
         static void Main(string[] args)
         {
