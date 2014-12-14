@@ -1,0 +1,13 @@
+E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\MutexUI3\bin\Release\MutexUI3.exe.config
+E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\MutexUI3\obj\Release\MutexUI3.csprojResolveAssemblyReference.cache
+E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\MutexUI3\obj\Release\MainWindow.baml
+E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\MutexUI3\obj\Release\MainWindow.g.cs
+E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\MutexUI3\obj\Release\App.g.cs
+E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\MutexUI3\obj\Release\MutexUI3_MarkupCompile.cache
+E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\MutexUI3\obj\Release\MutexUI3.g.resources
+E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\MutexUI3\obj\Release\MutexUI3.Properties.Resources.resources
+E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\MutexUI3\obj\Release\MutexUI3.csproj.GenerateResource.Cache
+E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\MutexUI3\bin\Release\MutexUI3.exe
+E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\MutexUI3\bin\Release\MutexUI3.pdb
+E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\MutexUI3\obj\Release\MutexUI3.exe
+E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\MutexUI3\obj\Release\MutexUI3.pdb

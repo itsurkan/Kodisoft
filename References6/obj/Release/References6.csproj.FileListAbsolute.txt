@@ -1,0 +1,6 @@
+E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\References6\bin\Release\References6.exe.config
+E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\References6\bin\Release\References6.exe
+E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\References6\bin\Release\References6.pdb
+E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\References6\obj\Release\References6.exe
+E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\References6\obj\Release\References6.pdb
+E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\References6\obj\Release\References6.csprojResolveAssemblyReference.cache

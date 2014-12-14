@@ -1,0 +1,15 @@
+E:\Documents\Visual Studio 2013\Projects\Intership\Intership\Intership\1Clone\bin\Release\1Clone.exe.config
+E:\Documents\Visual Studio 2013\Projects\Intership\Intership\Intership\1Clone\bin\Release\1Clone.exe
+E:\Documents\Visual Studio 2013\Projects\Intership\Intership\Intership\1Clone\bin\Release\1Clone.pdb
+E:\Documents\Visual Studio 2013\Projects\Intership\Intership\Intership\1Clone\obj\Release\1Clone.csprojResolveAssemblyReference.cache
+E:\Documents\Visual Studio 2013\Projects\Intership\Intership\Intership\1Clone\obj\Release\1Clone.exe
+E:\Documents\Visual Studio 2013\Projects\Intership\Intership\Intership\1Clone\obj\Release\1Clone.pdb
+E:\Documents\Visual Studio 2013\Projects\Intership\Intership\1Clone\bin\Release\1Clone.exe.config
+E:\Documents\Visual Studio 2013\Projects\Intership\Intership\1Clone\obj\Release\1Clone.exe
+E:\Documents\Visual Studio 2013\Projects\Intership\Intership\1Clone\obj\Release\1Clone.pdb
+E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\1Clone\bin\Release\1Clone.exe.config
+E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\1Clone\bin\Release\1Clone.exe
+E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\1Clone\bin\Release\1Clone.pdb
+E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\1Clone\obj\Release\1Clone.csprojResolveAssemblyReference.cache
+E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\1Clone\obj\Release\1Clone.exe
+E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\1Clone\obj\Release\1Clone.pdb
