@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Security.Policy;
 using System.Text;
-using System.Threading.Tasks;
-using System.Xml;
+
 
 namespace References6
 {
@@ -17,19 +13,19 @@ namespace References6
 
         static void Main(string[] args)
         {
-            Dictionary<Type, object> dictionary = new Dictionary<Type, object>();
-
-            Console.WindowWidth = 150;
+            var dictionary = new Dictionary<Type, object>();
 
             try
             {
                 foreach (var assem in AppDomain.CurrentDomain.GetAssemblies())
                 {
-                    dictionary.Add(assem.GetTypes()[0], assem.GetName().Name);
+                    var temp = assem.GetTypes()[0].GetConstructor(Type.EmptyTypes);
+                    if (temp != null)
+                        dictionary.Add(assem.GetTypes()[0],temp);
                 }
                 foreach (var item in dictionary)
                 {
-                    StringBuilder sb = new StringBuilder();
+                    var sb = new StringBuilder();
                     sb.AppendFormat("Key = {0}", item.Key);
                     sb.AppendLine();
                     sb.AppendFormat("Value = {0}", item.Value);
@@ -42,11 +38,11 @@ namespace References6
                 Console.WriteLine("Error");
                 Console.WriteLine(e.Data);
             }
-          
+
             Console.ReadKey();
         }
 
-      
+
 
     }
 }
