@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Text;
 
@@ -9,19 +10,16 @@ namespace References6
 
     class Program
     {
-
+        public static Dictionary<Type,object> dictionary = new Dictionary<Type, object>();
 
         static void Main(string[] args)
         {
-            var dictionary = new Dictionary<Type, object>();
-
             try
             {
                 foreach (var assem in AppDomain.CurrentDomain.GetAssemblies())
                 {
-                    var temp = assem.GetTypes()[0].GetConstructor(Type.EmptyTypes);
-                    if (temp != null)
-                        dictionary.Add(assem.GetTypes()[0],temp);
+                    if (assem.GetTypes()[0].GetConstructor(Type.EmptyTypes) != null)
+                        dictionary.Add(assem.GetTypes()[0], assem.GetTypes()[0].GetConstructor(Type.EmptyTypes));
                 }
                 foreach (var item in dictionary)
                 {
@@ -32,17 +30,26 @@ namespace References6
                     sb.AppendLine();
                     Console.WriteLine(sb);
                 }
+                foreach (var item in dictionary)
+                {
+                    var obj = Create(item.Key);
+                }
             }
             catch (Exception e)
             {
                 Console.WriteLine("Error");
                 Console.WriteLine(e.Data);
             }
-
-            Console.ReadKey();
+          
+            //Console.ReadKey();
         }
 
-
+        public static object Create(Type type)
+        {
+            var r =  dictionary[type].GetType();
+            return r;
+        }
+      
 
     }
 }
