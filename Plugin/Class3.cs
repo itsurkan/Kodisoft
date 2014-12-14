@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Plugin
 {
-    public static class WithInt
+    public  class WithInt:IPlugin<double>
     {
-        public static double Factorial(double value)
+        public double Modify(double value)
         {
             if (value < 1)
             {

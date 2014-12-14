@@ -6,16 +6,13 @@ using System.Threading.Tasks;
 
 namespace Plugin
 {
-    public static class WithString
+    public class WithString:IPlugin<string>
     {
-        public static string Modify(string param)
-        {
-            return param.ToLower();
-        }
 
-        public static string removeSpaces(string param)
+        public  string Modify(string param)
         {
             return param.Replace(" ", "");
         }
+
     }
 }

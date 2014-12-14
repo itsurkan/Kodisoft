@@ -5,11 +5,13 @@ using System.Text;
 
 namespace Plugin
 {
-    public static class WithDouble  
+    public  class WithDouble: IPlugin<double>
     {
-        public static double Abs(double value)
+        public double Modify(double value)
         {
             return Math.Abs(value);
         }
     }
+
+
 }
