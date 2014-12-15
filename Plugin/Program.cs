@@ -20,12 +20,12 @@ namespace Plugin
             temp2.DataOutput();
 
             WorkWithInt temp3 = new WorkWithInt();
-            temp3.Data =4;
+            // temp3.Data =4;
             temp3.DataOutput();
 
             GeneralModifyInt temp4 = new GeneralModifyInt();
             temp4.Data = 2;
-            temp4.ModifyData = 3;
+           // temp4.ModifyData = 4;
             temp4.DataOutput();
 
             Console.ReadKey();
