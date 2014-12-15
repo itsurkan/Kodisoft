@@ -128,10 +128,10 @@ namespace Plugin
 
         public int ModifyData { get { return _modofyData; } set { _modofyData = value; } }
 
-
         public GeneralModifyInt()
         {
-            _modofyData = 1;
+            _modofyData = 2;
+            _data = 4;
             _name = "Plugin and Pluginable for ints";
             CurrentWorker = new WorkWithInt();
             CurrentPlugin = new WithInt();
