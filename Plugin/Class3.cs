@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace Plugin
 {
-    public  class WithInt:IPlugin<int>
+    public class WithInt : IPlugin<int>
     {
         private string _name;
-       
-        public string Name   { get { return _name; } }
+
+        public string Name
+        {
+            get { return _name; }
+        }
 
         public WithInt()
         {
@@ -28,18 +31,11 @@ namespace Plugin
                 int res = 1;
                 for (int i = 2; i <= value; i++)
                 {
-                    res = res * i;
+                    res = res*i;
                 }
                 return res;
             }
         }
-        public override string ToString()
-        {
-            return Name;
-        }
-
-       
     }
-
 
 }

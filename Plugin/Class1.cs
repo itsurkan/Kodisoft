@@ -5,23 +5,23 @@ using System.Text;
 
 namespace Plugin
 {
-    public  class WithDouble: IPlugin<double>
+    public class WithDouble : IPlugin<double>
     {
         private string _name;
+
         public WithDouble()
         {
             this._name = "Plugin for doubles";
         }
+
         public double Modify(double value)
         {
             return Math.Abs(value);
         }
 
-        public string Name {get { return _name; } }
-
-        public override string ToString()
+        public string Name
         {
-            return Name;
+            get { return _name; }
         }
     }
 

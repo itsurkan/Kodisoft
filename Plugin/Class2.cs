@@ -20,11 +20,5 @@ namespace Plugin
         {
             return param.Replace(" ", "");
         }
-        public override string ToString()
-        {
-            return Name;
-        }
-   
-
     }
 }

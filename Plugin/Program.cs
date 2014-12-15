@@ -12,6 +12,7 @@ namespace Plugin
     {
         static void Main(string[] args)
         {
+
             WorkWithDouble temp1 = new WorkWithDouble();
             temp1.DataOutput();
 
@@ -23,7 +24,8 @@ namespace Plugin
             temp3.DataOutput();
 
             GeneralModifyInt temp4 = new GeneralModifyInt();
-            temp4.Data = 4;
+            temp4.Data = 2;
+            temp4.ModifyData = 3;
             temp4.DataOutput();
 
             Console.ReadKey();

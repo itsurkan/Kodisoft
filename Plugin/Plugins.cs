@@ -1,10 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text.RegularExpressions;
 
 
 namespace Plugin
@@ -36,54 +31,73 @@ namespace Plugin
 
     public class WorkWithString:BeforePlugin<string>
     {
+        private WithString plugin;
+
+        private string _data;
+
+        public override string Data { get { return _data; } set { _data = value; } }
+
         public WorkWithString()
         {
+            _data = "hallo my friend"; 
             CurrentPlugin = new WithString();
+            plugin = CurrentPlugin as WithString;
         }
 
         public override string GetPlugiNameProp()
         {
-            return CurrentPlugin.ToString();
+            return plugin.Name;
         }
 
         public override void DataOutput()
         {
-            Console.WriteLine(CurrentPlugin.Modify(Data).ToString());
+            Console.WriteLine(plugin.Name);
+            Console.WriteLine(plugin.Modify(Data));
+            Console.WriteLine();
         }
-
-        public override string Data { get { return "hallo my friend"; } set { } }
     }
-
 
     public class WorkWithDouble : BeforePlugin<double>
     {
+        private WithDouble plugin;
+            
+        private double _data;
+
+        public override double Data {get { return _data; } set { _data = value; }}
+
         public WorkWithDouble()
         {
-             CurrentPlugin = new WithDouble();
+            CurrentPlugin = new WithDouble();
+            plugin = CurrentPlugin as WithDouble;
+            _data = -15.9;
         }
 
         public override string GetPlugiNameProp()
         {
-            return  CurrentPlugin.ToString();
+            return plugin.Name;
         }
 
         public override void DataOutput()
         {
-           
-            Console.WriteLine(CurrentPlugin.Modify(Data).ToString());
+            Console.WriteLine(plugin.Name);
+            Console.WriteLine(plugin.Modify(Data));
+            Console.WriteLine();
         }
-
-        public  override double Data {get { return 8.95; }set { }}}
-
+    }
 
     public class WorkWithInt:BeforePlugin<int>
     {
+        private WithInt plugin;
+
         private int _data ;
+
         public override int Data { get { return _data; } set { _data = value; } }
+
         public WorkWithInt()
         {
             _data = 1;
             CurrentPlugin = new WithInt();
+            plugin = CurrentPlugin as WithInt;
         }
 
         public override string GetPlugiNameProp()
@@ -93,7 +107,9 @@ namespace Plugin
 
         public override void DataOutput()
         {
-            Console.WriteLine(CurrentPlugin.Modify(Data));
+            Console.WriteLine(plugin.Name);
+            Console.WriteLine(plugin.Modify(Data));
+            Console.WriteLine();
         }
 
        
@@ -101,35 +117,46 @@ namespace Plugin
 
     public class GeneralModifyInt: BeforePlugin<int>, IPlugin<int>
     {
-        private string _name;
+        private readonly string _name;
         private int _data;
+        private int _modofyData;
+        private WithInt plugin;
 
         public string Name {get { return _name; } set { }}
         public WorkWithInt CurrentWorker;
         public override int Data { get { return _data; } set { _data = value; } }
 
+        public int ModifyData { get { return _modofyData; } set { _modofyData = value; } }
+
+
         public GeneralModifyInt()
         {
-            _data = 2;
+            _modofyData = 1;
             _name = "Plugin and Pluginable for ints";
             CurrentWorker = new WorkWithInt();
             CurrentPlugin = new WithInt();
+            plugin = CurrentPlugin as WithInt;
         }
-        
+
+        // modify method for plugit
         public int Modify(int param)
         {
-            return Data * param;
+            return  param*Data;
         }
-        
+
+        // method for moditified data output
         public override void DataOutput()
         {
-            Data = Modify(3);
-            Console.WriteLine( CurrentPlugin.Modify(Data));
+            Data = Modify(_modofyData);
+
+            Console.WriteLine(GetPlugiNameProp());
+            Console.WriteLine(plugin.Modify(Data));
+            Console.WriteLine();
         }
 
         public override string GetPlugiNameProp()
         {
-            return CurrentPlugin.ToString();
+            return "Plugin and Pluginable for ints";
         }
     }
     
