@@ -12,13 +12,16 @@ namespace Plugin
     {
         static void Main(string[] args)
         {
-            WithInt temp = new WithInt();
-            Console.WriteLine(temp.Modify(5));
-            WithDouble temp1 = new WithDouble();
-            Console.WriteLine(temp1.Modify(-45.87));
-            WithString temp2 = new WithString();
-            Console.WriteLine(temp2.Modify("hallo my friend"));
-            Console.ReadKey();
+            WorkWithInt temp = new WorkWithInt();
+            temp.DataOutput();
+
+            WorkWithDouble temp1 = new WorkWithDouble();
+            temp1.DataOutput();
+
+            WorkWithString temp2 = new WorkWithString();
+            temp2.DataOutput();
+
+          //  Console.ReadKey();
         }
     }
 }

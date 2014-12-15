@@ -6,9 +6,18 @@ using System.Threading.Tasks;
 
 namespace Plugin
 {
-    public  class WithInt:IPlugin<double>
+    public  class WithInt:IPlugin<int>
     {
-        public double Modify(double value)
+        private string _name;
+
+        public string Name   { get { return _name; } }
+
+        public WithInt()
+        {
+            _name = "Plugin for Ints";
+        }
+
+        public int Modify(int value)
         {
             if (value < 1)
             {
@@ -16,7 +25,7 @@ namespace Plugin
             }
             else
             {
-                double res = 1;
+                int res = 1;
                 for (int i = 2; i < value; i++)
                 {
                     res = res * value;
@@ -24,6 +33,13 @@ namespace Plugin
                 return res;
             }
         }
+        public override string ToString()
+        {
+            return Name;
+        }
+
+       
     }
+
 
 }
