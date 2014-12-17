@@ -11,6 +11,9 @@ namespace _1Clone
     {
         public static T Clone<T>(this T toClone)
         {
+            if (ReferenceEquals(toClone, null))
+                return default(T);
+
             using (var stream = new MemoryStream())
             {
                 var formatter = new BinaryFormatter();
@@ -45,10 +48,8 @@ namespace _1Clone
 
         static void Main(string[] args)
         {
-            
             new Program().Test();
             Console.ReadKey();
-
         }
     }
 }
