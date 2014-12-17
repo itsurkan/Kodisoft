@@ -6,47 +6,10 @@ using System.Windows.Threading;
 
 namespace MutexUI3
 {
-    public class AsyncLock
+
+
+    public  class AsyncLock
     {
-        // Using lock-release
-        Mutex mutx = new Mutex();
-        Dispatcher UserDispatcher;
-
-        public async Task Lock()
-        {
-            await Task.Factory.StartNew(() =>
-            {
-                mutx.WaitOne();
-                Console.WriteLine("ThreadOne, executing ThreadMethod, " +
-                    "is {0} from the thread pool.",
-                    Thread.CurrentThread.ManagedThreadId);
-                UserDispatcher = Dispatcher.CurrentDispatcher;
-            });
-        }
-
-        public void Release()
-        {
-            try
-            {
-                if (mutx != null && UserDispatcher != null)
-                {
-                    //UserDispatcher.Invoke(new Action(() =>
-                    //{
-                    //    Console.WriteLine("Releasing...");
-                       mutx.ReleaseMutex();
-                    //}));
-                }
-                else
-                {
-                    Console.WriteLine("Null");
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
-        }
-
         // Using block
         private readonly Task<IDisposable> _releaserTask;
         private readonly SemaphoreSlim _semaphore = new SemaphoreSlim(1, 2);
@@ -57,6 +20,7 @@ namespace MutexUI3
             _releaser = new Releaser(_semaphore);
             _releaserTask = Task.FromResult(_releaser);
         }
+
         public Task<IDisposable> LockSection()
         {
             Task waitTask = _semaphore.WaitAsync();

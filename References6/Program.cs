@@ -8,41 +8,47 @@ using System.Threading;
 
 namespace References6
 {
-
-
-    class Program
+    public class WorkwithDomains
     {
-        public static Dictionary<Type, object> dictionary = new Dictionary<Type, object>();
-        public static List<object> NewItem = new List<object>();
+        public Dictionary<Type, object> Dictionary;
 
-        static void Main(string[] args)
+        public List<object> NewItem;
+
+        private  object locker;
+
+        public WorkwithDomains()
         {
-            var s = new Program();
-            s.DoOurWorkToTheEnd();
-            //Console.ReadKey();
+            Dictionary = new Dictionary<Type, object>();
+            NewItem = new List<object>();
+            locker = new object();
         }
 
         public static object Create(Type type)
         {
-            return Activator.CreateInstance(type);
+                return Activator.CreateInstance(type);
         }
 
         public void DoOurWorkToTheEnd()
         {
-            lock (this)
+            lock (locker)
             {
                 try
                 {
                     foreach (var assem in AppDomain.CurrentDomain.GetAssemblies())
-                        if (assem.GetTypes()[0].GetConstructor(Type.EmptyTypes) != null)
-                            dictionary.Add(assem.GetTypes()[0], assem.GetTypes()[0].GetConstructor(Type.EmptyTypes));
+                            if (assem.GetTypes()[0].GetConstructor(Type.EmptyTypes) != null)
+                               lock(Dictionary) 
+                                    Dictionary.Add(assem.GetTypes()[0], assem.GetTypes()[0].GetConstructor(Type.EmptyTypes));
+                        
 
-                    foreach (var item in dictionary)
+                    foreach (var item in Dictionary)
                     {
-                        NewItem.Add(Create(item.Key));
-                        Console.WriteLine("Key = {0}", item.Key);
-                        Console.WriteLine("Value = {0}", item.Value);
-                        Console.WriteLine(NewItem.Last());
+                        lock (NewItem)
+                            NewItem.Add(Create(item.Key));
+                            Console.WriteLine(NewItem.Last());
+
+                            Console.WriteLine("Key = {0}", item.Key);
+                            Console.WriteLine("Value = {0}", item.Value);
+                            Console.WriteLine();
                     }
                 }
                 catch (Exception e)
@@ -52,6 +58,18 @@ namespace References6
                 }
             }
         }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           WorkwithDomains domainsWorker = new WorkwithDomains();
+           domainsWorker.DoOurWorkToTheEnd();
+            //Console.ReadKey();
+        }
 
+       
+
+    
     }
 }

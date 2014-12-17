@@ -67,7 +67,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="myMutex.cs" />
+    <Compile Include="MutexLR2.cs" />
+    <Compile Include="MutexLR1.cs" />
+    <Compile Include="myMutexSection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

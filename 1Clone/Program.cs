@@ -23,9 +23,7 @@ namespace _1Clone
 
     class Program
     {
-
-
-        static void Main(string[] args)
+        public void Test()
         {
             int i = 5;
             int b;
@@ -42,7 +40,13 @@ namespace _1Clone
 
             Console.WriteLine(str);
             Console.WriteLine(v);
+        }
 
+
+        static void Main(string[] args)
+        {
+            
+            new Program().Test();
             Console.ReadKey();
 
         }

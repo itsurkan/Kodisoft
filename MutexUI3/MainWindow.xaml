@@ -6,7 +6,8 @@
         <Button Content="Test mutexUI section" x:Name="LockUIasync" Click="LockUIasync_OnClick" HorizontalAlignment="Left" Margin="10,42,0,0" VerticalAlignment="Top" Width="141"/>
         <Button Content="Test mutexUI LR" x:Name="LockUIasyncLR" Click="LockUIasyncLR_OnClick" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Width="141"/>
         <Button Content="Close" x:Name="btnClose" Click="BtnClose_OnClick" HorizontalAlignment="Left" Margin="10,128,0,0" VerticalAlignment="Top" Width="141"/>
-        <Label Content="Test" x:Name="lTest" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="141"/>
+        <Label Content="Test" x:Name="lTest" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="64"/>
+        <Label Content="Test1" x:Name="lTest1" HorizontalAlignment="Left" Margin="87,10,0,0" VerticalAlignment="Top" Width="64"/>
 
     </Grid>
 </Window>

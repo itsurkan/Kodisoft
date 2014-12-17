@@ -23,7 +23,6 @@ E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\Continuati
 E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\Continuation_2\bin\Release\Continuation_2.pdb
 E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\Continuation_2\bin\Release\Newtonsoft.Json.dll
 E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\Continuation_2\bin\Release\Newtonsoft.Json.xml
-E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\Continuation_2\obj\Release\2Continuation.csprojResolveAssemblyReference.cache
 E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\Continuation_2\obj\Release\MainWindow.baml
 E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\Continuation_2\obj\Release\MainWindow.g.cs
 E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\Continuation_2\obj\Release\App.g.cs
