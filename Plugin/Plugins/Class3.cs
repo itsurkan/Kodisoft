@@ -4,16 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Plugin
+namespace Plugin.Plugins
 {
-    public class WithInt : IPlugin<int>
+    public class WithInt : IPlugin, IModify<int>
     {
         private string _name;
 
-        public string Name
+        public string GetName()
         {
-            get { return _name; }
+            return _name;
         }
+        
+        public string Name{get { return _name; }}
 
         public WithInt()
         {

@@ -1,34 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using Plugin.Plugins;
 
 
 namespace Plugin
 {
-    public interface IPlugin<T>
-    {
-       T Modify(T param);
-    }
-
-    public class PluginContainer : IPlugin<List<IPlugin<object>>>
-    {
-        private List<IPlugin<object>> collection = new List<IPlugin<object>>();
-
-        public List<IPlugin<object>> Modify(List<IPlugin<object>> param)
-        {
-            collection.AddRange(param);
-            return collection;
-        }
-    }
-
-    public abstract  class BeforePlugin<T>
-    {
-       // public string PluginNameProp { get;  set; }
-        public abstract T Data { get; set; }
-        public IPlugin<T> CurrentPlugin;
-        public abstract void DataOutput();
-    }
-
-    public class WorkWithString:BeforePlugin<string>
+   /*
+    public class WorkWithString:BasePlugin<string>
     {
         private WithString plugin;
 
@@ -51,7 +29,7 @@ namespace Plugin
         }
     }
 
-    public class WorkWithDouble : BeforePlugin<double>
+    public class WorkWithDouble : BasePlugin<double>
     {
         private WithDouble plugin;
             
@@ -68,13 +46,13 @@ namespace Plugin
         
         public override void DataOutput()
         {
-            Console.WriteLine(plugin.Name);
+            Console.WriteLine(plugin.GetName);
             Console.WriteLine(plugin.Modify(Data));
             Console.WriteLine();
         }
     }
 
-    public class WorkWithInt:BeforePlugin<int>
+    public class WorkWithInt:BasePlugin<int>
     {
         private WithInt plugin;
 
@@ -97,9 +75,9 @@ namespace Plugin
         }
 
        
-    }
-
-    public class GeneralModifyInt: BeforePlugin<int>, IPlugin<int>
+    }*/
+    /*
+    public class GeneralModifyInt: BaseClass.BasePlugin<int>, IPlugin<int>
     {
         private readonly string _name;
         private int _data;
@@ -140,7 +118,7 @@ namespace Plugin
         }
 
         public string GetPlugiNameProp { get {return "Plugin and Pluginable for ints"; } set{} }
-    }
+    }*/
     
 }
 

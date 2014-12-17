@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{63F1068C-EC4F-4004-927F-DBE1C6B477E0}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Plugin</RootNamespace>
     <AssemblyName>Plugin</AssemblyName>
@@ -44,9 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Class2.cs" />
-    <Compile Include="Class3.cs" />
+    <Compile Include="BaseWorkClass.cs" />
+    <Compile Include="Container.cs" />
+    <Compile Include="Plugins\PlugAndPlug.cs" />
+    <Compile Include="Plugins\Interfaces.cs" />
+    <Compile Include="Plugins\Class1.cs" />
+    <Compile Include="Plugins\Class2.cs" />
+    <Compile Include="Plugins\Class3.cs" />
     <Compile Include="Plugins.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

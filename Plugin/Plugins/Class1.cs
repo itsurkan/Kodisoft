@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Plugin
+namespace Plugin.Plugins
 {
-    public class WithDouble : IPlugin<double>
+    public class WithDouble : IPlugin, IModify<double>
     {
-        private string _name;
+        private readonly string _name;
 
         public WithDouble()
         {
-            this._name = "Plugin for doubles";
+            _name = "Plugin for doubles";
         }
 
         public double Modify(double value)
@@ -19,9 +19,9 @@ namespace Plugin
             return Math.Abs(value);
         }
 
-        public string Name
+        public string GetName()
         {
-            get { return _name; }
+            return _name;
         }
     }
 
