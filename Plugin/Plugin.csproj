@@ -51,7 +51,6 @@
     <Compile Include="Plugins\Class1.cs" />
     <Compile Include="Plugins\Class2.cs" />
     <Compile Include="Plugins\Class3.cs" />
-    <Compile Include="Plugins.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
