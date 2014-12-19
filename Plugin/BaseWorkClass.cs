@@ -8,44 +8,42 @@ namespace Plugin
 
     public class BasePluginWork<T>
     {
-        public T Data { get; set; }
-        private Type _typeProp { get; set; }
-        public IPlugin CurrentPlugin;
+        public T ModificationData { get; set; }
+        private Type plugType;
+        public IPlugin CurrentPlugin { get; set; }
+        private readonly string unsupported = "Sorry but this type is not suported in current version.";
 
         public BasePluginWork()
         {
-            try
+            plugType= typeof(T);
+            switch (plugType)
             {
-                _typeProp = typeof(T);
-                if (typeof(T) == typeof(double))
+                case typeof(double):
                     CurrentPlugin = new WithDouble();
+                    break;
 
-                else if (typeof(T) == typeof(int))
+                case typeof(int):
                     CurrentPlugin = new WithInt();
+                    break;
 
-                else if (typeof(T) == typeof(string))
+                case typeof(string):
                     CurrentPlugin = new WithString();
+                    break;
+                
+                default:
+                    CurrentPlugin = null;
+                    Console.WriteLine("Unresolved type for PLugins. "+unsupported);
+                    break;
             }
-            catch (Exception)
-            {
-                Console.WriteLine("Errow occured creatinf instance: BasePluginWork");
-            }
-          
         }
 
         public void DataOutput()
         {
-            try
-            {
-                Console.WriteLine("Modified data by base class for plugins");
-                Console.WriteLine((CurrentPlugin as IModify<T>).Modify(Data));
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Can`t output data");
-                throw;
-            }
-           
+            Console.WriteLine("Modified data by base class for plugins");
+            if(CurrentPlugin if IModify<T> && CurrentPlugin != null)
+                Console.WriteLine(((CurrentPlugin)IModify<T>).Modify(ModificationData));
+            else
+                Console.WriteLine("Can`t output data. "+unsupported);
         }
     }
 }
