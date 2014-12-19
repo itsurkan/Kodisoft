@@ -46,30 +46,25 @@ namespace Plugin
                 {
                     case "Plugin for doubles":
                         Console.WriteLine(pluginName);
-                        IModify<double> plugDouble = plugin as IModify<double>;
-                        Console.WriteLine(plugDouble.Modify(-89).ToString());
+                        Console.WriteLine((plugin as IModify<double>).Modify(-89).ToString());
                         Console.WriteLine();
                         break;
 
                     case "Plugin for Strings":
-
                         Console.WriteLine(pluginName);
-                        IModify<string> plugString = plugin as IModify<string>;
-                        Console.WriteLine(plugString.Modify("THis is my life"));
+                        Console.WriteLine((plugin as IModify<string>).Modify("THis is my life"));
                         Console.WriteLine();
                         break;
 
                     case "Plugin for Ints":
                         Console.WriteLine(pluginName);
-                        IModify<int> plugInt = plugin as IModify<int>;
-                        Console.WriteLine(plugInt.Modify(6).ToString());
+                        Console.WriteLine((plugin as IModify<int>).Modify(6).ToString());
                         Console.WriteLine();
                         break;
 
                     case "Pluginable Plugin":
                         Console.WriteLine(pluginName);
-                        IModify<int>  plugPliginable = plugin as IModify<int>;
-                        Console.WriteLine(plugPliginable.Modify(6).ToString());
+                        Console.WriteLine((plugin as IModify<int>).Modify(6).ToString());
                         Console.WriteLine();
                         break;
 
