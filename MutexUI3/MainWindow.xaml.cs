@@ -13,7 +13,6 @@ namespace MutexUI3
         public MainWindow()
         {
             InitializeComponent();
-
             Thread.CurrentThread.Name = "1-st";
         }
 
@@ -23,43 +22,28 @@ namespace MutexUI3
         }
 
         private async void LockUIasync_OnClick(object sender, RoutedEventArgs e)
-        { 
-            /*AsyncLock lockUI = new AsyncLock();
-
+        {
+           // AsyncMutex mutexUI = new AsyncMutex();
+            /*
             using (await lockUI.LockSection())
             { 
                 lTest.Content = "Using block";
+                Thread.Sleep(3000);
+                lTest.Content = Thread.CurrentThread.Name;
             }*/
-            int sum = 5;
-           // MutexAsync mut = new MutexAsync();
-           // await mut.Lock();
-            for (int i = 1; i < 5; i++)
-            {
-                sum = sum*i;
-            }
-            lTest.Content = Thread.CurrentThread.Name;
-            Thread.Sleep(3000);
-            //mut.Release();
         }
 
         private async void LockUIasyncLR_OnClick(object sender, RoutedEventArgs e)
         {
-            MutexLR2 mutexUI = new MutexLR2();
+            lTest1.Content = "Start";
+            MutexUI mutexUI = new MutexUI();
             await mutexUI.Lock();
             
-            lTest1.Content = Thread.CurrentThread.Name+Func(150) ;
-            mutexUI.Release();
-        }
-
-        public int Func(int num)
-        {
-            int sum = 1;
-            for (int i = 1; i < num * num*num; i++)
-            {
-                sum = sum * i;
-            }
+            
             Thread.Sleep(3000);
-            return sum;
+            lTest1.Content = "Using lock-release";
+            
+            mutexUI.Release();
         }
     }
 }
