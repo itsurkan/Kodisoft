@@ -1,20 +1,19 @@
-﻿using System;
+using System;
 
 namespace Plugin
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            PluginContainer list = new PluginContainer();
-            list.Modify("");
+            
+            PluginContainer conteiners = new PluginContainer();
+            conteiners.Modify("");
             Console.WriteLine();
 
-            BasePluginWork<int> basePlugin = new BasePluginWork<int>();
-            basePlugin.Data = 5;
-            basePlugin.DataOutput();
-            
-            //Console.ReadKey();
+            BasePluginWork<int> plugin = new BasePluginWork<int>();
+            plugin.Data = 5;
+            plugin.DataOutput();
         }
     }
 }
