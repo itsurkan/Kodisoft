@@ -15,35 +15,39 @@ namespace Plugin
 
         public BasePluginWork()
         {
-            plugType= typeof(T);
-            switch (plugType)
+            plugType = typeof(T);
+
+            try
             {
-                case typeof(double):
+                if (typeof (T) == typeof (double))
                     CurrentPlugin = new WithDouble();
-                    break;
 
-                case typeof(int):
+                else if (typeof (T) == typeof (int))
                     CurrentPlugin = new WithInt();
-                    break;
 
-                case typeof(string):
+                else if (typeof (T) == typeof (string))
                     CurrentPlugin = new WithString();
-                    break;
-                
-                default:
-                    CurrentPlugin = null;
-                    Console.WriteLine("Unresolved type for PLugins. "+unsupported);
-                    break;
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Errow occured creatinf instance: BasePluginWork");
             }
         }
 
         public void DataOutput()
         {
             Console.WriteLine("Modified data by base class for plugins");
-            if(CurrentPlugin if IModify<T> && CurrentPlugin != null)
-                Console.WriteLine(((CurrentPlugin)IModify<T>).Modify(ModificationData));
-            else
-                Console.WriteLine("Can`t output data. "+unsupported);
+            try
+            {
+                if ((CurrentPlugin as IModify<T>) != null)
+                    Console.WriteLine((CurrentPlugin as IModify<T>).Modify(ModificationData));
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Can`t output data");
+            }
+           
+             
         }
     }
 }
