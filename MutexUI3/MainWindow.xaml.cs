@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
@@ -11,8 +10,6 @@ namespace MutexUI3
 
     public partial class MainWindow : Window
     {
-        public static MutexUI mutex = new MutexUI();
-        public int i = 0;
         public MainWindow()
         {
             InitializeComponent();
@@ -26,40 +23,27 @@ namespace MutexUI3
 
         private async void LockUIasync_OnClick(object sender, RoutedEventArgs e)
         {
+           // AsyncMutex mutexUI = new AsyncMutex();
+            /*
+            using (await lockUI.LockSection())
+            { 
+                lTest.Content = "Using block";
+                Thread.Sleep(3000);
+                lTest.Content = Thread.CurrentThread.Name;
+            }*/
         }
 
         private async void LockUIasyncLR_OnClick(object sender, RoutedEventArgs e)
         {
-            await Task.Factory.StartNew(() =>
-            {
-                for (int i = 0; i < 3; i++)
-                {
-                    Thread newThread = new Thread(DoTasksAsync);
-                    newThread.Name = String.Format("Thread{0}", i + 1);
-                    newThread.Start();
-                }
-            });
-        }
-
-        private async void DoTasksAsync()
-        {
-            await mutex.Lock(); 
+            lTest1.Content = "Start";
+            MutexUI mutexUI = new MutexUI();
+            await mutexUI.Lock();
             
-            tbLog.Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate()
-                    { 
-                        i++;
-                        tbLog.Text += '\n' + String.Format("Thread enter "+i);
-                    }
-            ));
-
-            Thread.Sleep(1000);
-
-            tbLog.Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate()
-                    {i++;
-                        tbLog.Text += '\n' + String.Format("Thread exit "+i);
-                    }
-            ));
-            mutex.Release();
+            
+            Thread.Sleep(3000);
+            lTest1.Content = "Using lock-release";
+            
+            mutexUI.Release();
         }
     }
 }

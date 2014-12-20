@@ -8,34 +8,36 @@ namespace MutexUI3
 {
     public class MutexUI
     {
-        Queue<Task> coldTasks = new Queue<Task>();
+        Queue<Task> Tasks = new Queue<Task>();
 
-        private Mutex mutex = new Mutex();
-        private object lockThis = new object();
-
+        public MutexUI()
+        {
+            Tasks.Enqueue(Task.Factory.StartNew(() => { }));
+        }
         public Task Lock()
         {
-            lock (lockThis)
+            lock (Tasks)
             {
-                coldTasks.Enqueue(Task.Factory.StartNew(() => { }));
-                coldTasks.Enqueue(new Task(() => {  }));
-                return coldTasks.Peek(); 
+                Tasks.Enqueue(new Task(() => { }));
+                return Tasks.Peek(); 
             }
         }
 
         public void Release()
         {
-            lock (lockThis)
+            lock (Tasks)
             {
-                if (coldTasks.Count > 0)
+                if (Tasks.Count > 0)
                 {
-                    coldTasks.Dequeue(); 
-                    if (coldTasks.Peek().IsCompleted == false) 
-                        coldTasks.Peek().Start(); 
+                    Tasks.Dequeue();
+                    if (Tasks.Peek().IsCompleted == false) 
+                        Tasks.Peek().Start(); 
                 }
             }
         }
     }
+
+
 
    
 }

@@ -1,14 +1,13 @@
 ﻿<Window x:Class="MutexUI3.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="211.842" Width="337.071">
+        Title="MainWindow" Height="204.842" Width="171.421">
     <Grid Height="172" VerticalAlignment="Top" Margin="0,0,2,0">
         <Button Content="Test mutexUI section" x:Name="LockUIasync" Click="LockUIasync_OnClick" HorizontalAlignment="Left" Margin="10,42,0,0" VerticalAlignment="Top" Width="141"/>
         <Button Content="Test mutexUI LR" x:Name="LockUIasyncLR" Click="LockUIasyncLR_OnClick" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Width="141"/>
         <Button Content="Close" x:Name="btnClose" Click="BtnClose_OnClick" HorizontalAlignment="Left" Margin="10,128,0,0" VerticalAlignment="Top" Width="141"/>
         <Label Content="Test" x:Name="lTest" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="64"/>
         <Label Content="Test1" x:Name="lTest1" HorizontalAlignment="Left" Margin="87,10,0,0" VerticalAlignment="Top" Width="64"/>
-        <TextBox x:Name ="tbLog" HorizontalAlignment="Left" Height="152" Margin="167,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
 
     </Grid>
 </Window>
