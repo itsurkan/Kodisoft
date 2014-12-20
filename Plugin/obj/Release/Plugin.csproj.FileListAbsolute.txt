@@ -1,0 +1,6 @@
+E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\Plugin\bin\Release\Plugin.pdb
+E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\Plugin\obj\Release\Plugin.csprojResolveAssemblyReference.cache
+E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\Plugin\obj\Release\Plugin.pdb
+E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\Plugin\bin\Release\Plugin.exe.config
+E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\Plugin\bin\Release\Plugin.exe
+E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\Plugin\obj\Release\Plugin.exe
