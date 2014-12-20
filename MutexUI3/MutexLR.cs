@@ -5,13 +5,16 @@ using System.Threading.Tasks;
 using System.Windows.Threading;
 
 namespace MutexUI3
-{
-    public class MutexUI
+{ 
+    public  partial class MutexUI
     {
         Queue<Task> Tasks = new Queue<Task>();
-
+         
         public MutexUI()
         {
+            _releaser = new Releaser(_semaphore);
+            _releaserTask = Task.FromResult(_releaser);
+
             Tasks.Enqueue(Task.Factory.StartNew(() => { }));
         }
         public Task Lock()
