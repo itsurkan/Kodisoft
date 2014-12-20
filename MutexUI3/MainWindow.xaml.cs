@@ -32,7 +32,7 @@ namespace MutexUI3
         {
             await Task.Factory.StartNew(() =>
             {
-                for (int i = 0; i < 3; i++)
+                for (int i = 0; i < 2; i++)
                 {
                     Thread newThread = new Thread(DoTasksAsync);
                     newThread.Name = String.Format("Thread{0}", i + 1);
