@@ -5,25 +5,25 @@ using System.Threading.Tasks;
 using System.Windows.Threading;
 
 namespace MutexUI3
-{ 
-    public  partial class MutexUI
+{
+    public partial class MutexUI
     {
-        Queue<Task> Tasks = new Queue<Task>();
-         
+        private Queue<Task> Tasks = new Queue<Task>();
+
         public MutexUI()
         {
-            // mutex section constructor
             _releaser = new Releaser(_semaphore);
             _releaserTask = Task.FromResult(_releaser);
 
             Tasks.Enqueue(Task.Factory.StartNew(() => { }));
         }
+
         public Task Lock()
         {
             lock (Tasks)
             {
                 Tasks.Enqueue(new Task(() => { }));
-                return Tasks.Peek(); 
+                return Tasks.Peek();
             }
         }
 
@@ -34,14 +34,10 @@ namespace MutexUI3
                 if (Tasks.Count > 0)
                 {
                     Tasks.Dequeue();
-                    if (Tasks.Peek().IsCompleted == false) 
-                        Tasks.Peek().Start(); 
+                    if (Tasks.Peek().IsCompleted == false)
+                        Tasks.Peek().Start();
                 }
             }
         }
     }
-
-
-
-   
 }
