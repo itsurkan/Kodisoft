@@ -12,6 +12,7 @@ namespace MutexUI3
     public partial class MainWindow : Window
     {
         private readonly BackgroundWorker backgroundWorker = new BackgroundWorker();
+
         private static MutexUI mutex = new MutexUI();
         private static int i = 0;
 
@@ -20,20 +21,13 @@ namespace MutexUI3
             InitializeComponent();
             Thread.CurrentThread.Name = "1-st";
             backgroundWorker.DoWork += backgroundWorker_DoWork;
-            backgroundWorker.RunWorkerCompleted += backgroundWorker_RunWorkerCompleted;
-        }
-
-        void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            //tBox.Text += '\n' + String.Format("COMPLETED");
         }
 
         void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            i = 0;
             for (int j = 0; j < 3; j++)
             {
-                Thread newThread = new Thread(new ThreadStart(DoTasks));
+                Thread newThread = new Thread(DoTasks);
                 newThread.Name = String.Format("Thread{0}", j + 1);
                 newThread.Start();
             }
@@ -41,58 +35,30 @@ namespace MutexUI3
 
         private void DoTasks()
         {
-
-            var baseMutex = new Mutex();
+            i = 0;
+            Mutex baseMutex = new Mutex();
             baseMutex.WaitOne();
             lock (tBox)
             {
                 i++;
-                tBox.Dispatcher.Invoke(DispatcherPriority.Normal,
-                    new Action(
-                        delegate()
+                tBox.Dispatcher.Invoke(DispatcherPriority.Normal,new Action(delegate()
                         {
                             tBox.Text += '\n' + String.Format("Thread #{0} start", i);
-                        }
-                        ));
+                        }));
 
                 // Simulate some work.
                 Thread.Sleep(1000);
 
-                tBox.Dispatcher.Invoke(DispatcherPriority.Normal,
-                    new Action(
-                        delegate()
+                tBox.Dispatcher.Invoke(DispatcherPriority.Normal,new Action(delegate()
                         {
                             tBox.Text += '\n' + String.Format("Thread #{0} stop", i);
-                        }
-                        ));
+                        }));
             }
-            //Release mutex
-        }
-
-        private void BtnClose_OnClick(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
-
-        private async void LockUIasyncLR_OnClick(object sender, RoutedEventArgs e)
-        {
-            i = 0;
-            tBox.Text = "";
-            // Create the threads that will use the protected resource. 
-            await Task.Factory.StartNew(() =>
-            {
-                for (int j = 0; j < 3; j++)
-                {
-                    Thread newThread = new Thread(new ThreadStart(DoTasksAsync));
-                    newThread.Name = String.Format("Thread{0}", j + 1);
-                    newThread.Start();
-                }
-            });
         }
 
         private async void DoTasksAsync()
         {
-            //Start the Mutex
+            i = 0;
             await mutex.Lock();
             tBox.Dispatcher.Invoke(DispatcherPriority.Normal,
                 new Action(
@@ -105,7 +71,7 @@ namespace MutexUI3
 
             // Simulate some work.
             Thread.Sleep(5000);
-            i = 0;
+
             tBox.Dispatcher.Invoke(DispatcherPriority.Normal,
                 new Action(
                     delegate()
@@ -118,10 +84,29 @@ namespace MutexUI3
             mutex.Release();
         }
 
+        private async void LockUIasyncLR_OnClick(object sender, RoutedEventArgs e)
+        {
+            tBox.Text = "";
+            await Task.Factory.StartNew(() =>
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    Thread newThread = new Thread(DoTasksAsync);
+                    newThread.Name = String.Format("Thread{0}", j + 1);
+                    newThread.Start();
+                }
+            });
+        }
+
         private void WithBackgroundWorker_OnClick(object sender, RoutedEventArgs e)
         {
             tBox.Text = "";
             backgroundWorker.RunWorkerAsync();
+        }
+
+        private void BtnClose_OnClick(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

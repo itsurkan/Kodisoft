@@ -3,12 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" ResizeMode="NoResize"
         Title="MainWindow" Height="187.842" Width="395.421" >
     <Grid Height="172" VerticalAlignment="Top" Margin="0,0,2,0">
-        <Button Content="Test mutexUI LR" x:Name="LockUIasyncLR" Click="LockUIasyncLR_OnClick" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Width="141"/>
+        <Button Content="Test mutexUI LR" x:Name="LockUIasyncLR" Click="LockUIasyncLR_OnClick" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top" Width="141"/>
         <Button Content="Close" x:Name="btnClose" Click="BtnClose_OnClick" HorizontalAlignment="Left" Margin="10,124,0,0" VerticalAlignment="Top" Width="141"/>
-        <Label Content="Test" x:Name="lTest" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="64"/>
-        <Label Content="Test1" x:Name="lTest1" HorizontalAlignment="Left" Margin="87,10,0,0" VerticalAlignment="Top" Width="64"/>
         <TextBox x:Name="tBox" Height="124" TextWrapping="Wrap" Text="" Background="{x:Null}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="202" Margin="0,0,10,28" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" />
-        <Button Content="Test mutex wait one" x:Name="WithBackgroundWorker" Click="WithBackgroundWorker_OnClick" HorizontalAlignment="Left" Margin="10,51,0,0" VerticalAlignment="Top" Width="141"/>
+        <Button Content="Test mutex wait one" x:Name="WithBackgroundWorker" Click="WithBackgroundWorker_OnClick" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" Width="141"/>
 
     </Grid>
 </Window>
