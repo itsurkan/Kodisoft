@@ -12,6 +12,7 @@ namespace MutexUI3
          
         public MutexUI()
         {
+            // mutex section constructor
             _releaser = new Releaser(_semaphore);
             _releaserTask = Task.FromResult(_releaser);
 

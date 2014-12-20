@@ -23,21 +23,18 @@ namespace MutexUI3
             Close();
         }
 
-        private async void LockUIasync_OnClick(object sender, RoutedEventArgs e)
+        private async void LockUIAsync_OnClick(object sender, RoutedEventArgs e)
         {
            
         }
 
-        private async void LockUIasyncLR_OnClick(object sender, RoutedEventArgs e)
+        private async void LockUIAsyncLR_OnClick(object sender, RoutedEventArgs e)
         {
-
-            tBox.Text = "";
-            // Create the threads that will use the protected resource. 
             await Task.Factory.StartNew(() =>
             {
                 for (int i = 0; i < 3; i++)
                 {
-                    Thread newThread = new Thread(new ThreadStart(DoTasksAsync));
+                    Thread newThread = new Thread(DoTasksAsync);
                     newThread.Name = String.Format("Thread{0}", i + 1);
                     newThread.Start();
                 }
@@ -46,27 +43,24 @@ namespace MutexUI3
 
         private async void DoTasksAsync()
         {
-            //Start the Mutex
+            int i = 0;
             await mutex.Lock();
-            tBox.Dispatcher.Invoke(DispatcherPriority.Normal,
-                new Action(
-                    delegate()
-                    {
-                        tBox.Text += '\n' + String.Format("Thread has entered the protected area");
-                    }
+
+            tbLog.Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate()
+            {
+                i++;
+                tbLog.Text += '\n' + String.Format("Thread enter " + i);
+            }
             ));
 
-            // Simulate some work.
             Thread.Sleep(1000);
 
-            tBox.Dispatcher.Invoke(DispatcherPriority.Normal,
-                new Action(
-                    delegate()
-                    {
-                        tBox.Text += '\n' + String.Format("Thread is leaving the protected area");
-                    }
+            tbLog.Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate()
+            {
+                i++;
+                tbLog.Text += '\n' + String.Format("Thread exit " + i);
+            }
             ));
-            //Release mutex
             mutex.Release();
         }
     }

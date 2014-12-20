@@ -12,14 +12,10 @@ namespace MutexUI3
             private readonly SemaphoreSlim _semaphore = new SemaphoreSlim(1, 1);
             private readonly IDisposable _releaser;
 
-            public IDisposable LockSection()
-            {
-                _semaphore.Wait();
-                return _releaser;
-            }
-            public Task<IDisposable> LockAsync()
+            public Task<IDisposable> LockSection()
             {
                 var waitTask = _semaphore.WaitAsync();
+
                 return waitTask.IsCompleted
                     ? _releaserTask
                     : waitTask.ContinueWith(
