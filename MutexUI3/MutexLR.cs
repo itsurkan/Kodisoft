@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Threading;
 
 namespace MutexUI3
-{
+{ 
     public class MutexUI
     {
         Queue<Task> Tasks = new Queue<Task>();
