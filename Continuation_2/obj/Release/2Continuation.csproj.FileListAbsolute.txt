@@ -31,3 +31,6 @@ E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\Continuati
 E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\Continuation_2\obj\Release\Continuation_2.Properties.Resources.resources
 E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\Continuation_2\obj\Release\2Continuation.csproj.GenerateResource.Cache
 E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\Continuation_2\obj\Release\2Continuation.csprojResolveAssemblyReference.cache
+C:\Users\Bohdan\Source\Repos\Kodisoft\Continuation_2\bin\Release\Continuation_2.exe.config
+C:\Users\Bohdan\Source\Repos\Kodisoft\Continuation_2\obj\Release\Continuation_2.exe
+C:\Users\Bohdan\Source\Repos\Kodisoft\Continuation_2\obj\Release\Continuation_2.pdb

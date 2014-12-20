@@ -11,3 +11,6 @@ E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\MutexUI3\o
 E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\MutexUI3\obj\Release\MutexUI_3_4.csproj.GenerateResource.Cache
 E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\MutexUI3\obj\Release\MutexUI3.exe
 E:\Documents\Visual Studio 2013\Projects\Kodisoft\Intership\Intership\MutexUI3\obj\Release\MutexUI3.pdb
+C:\Users\Bohdan\Source\Repos\Kodisoft\MutexUI3\bin\Release\MutexUI3.exe.config
+C:\Users\Bohdan\Source\Repos\Kodisoft\MutexUI3\obj\Release\MutexUI3.exe
+C:\Users\Bohdan\Source\Repos\Kodisoft\MutexUI3\obj\Release\MutexUI3.pdb

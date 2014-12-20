@@ -9,7 +9,7 @@ namespace MutexUI3
     public class MutexUI
     {
         Queue<Task> Tasks = new Queue<Task>();
-
+         
         public MutexUI()
         {
             Tasks.Enqueue(Task.Factory.StartNew(() => { }));
