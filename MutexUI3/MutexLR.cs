@@ -18,7 +18,7 @@ namespace MutexUI3
             lock (lockThis)
             {
                 coldTasks.Enqueue(Task.Factory.StartNew(() => { }));
-                coldTasks.Enqueue(new Task(() => { }));
+                coldTasks.Enqueue(new Task(() => {  }));
                 return coldTasks.Peek(); 
             }
         }

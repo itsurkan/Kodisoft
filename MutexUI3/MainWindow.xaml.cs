@@ -43,7 +43,7 @@ namespace MutexUI3
 
         private async void DoTasksAsync()
         {
-            await mutex.Lock();
+            await mutex.Lock(); 
             
             tbLog.Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate()
                     { 

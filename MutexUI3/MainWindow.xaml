@@ -8,7 +8,7 @@
         <Button Content="Close" x:Name="btnClose" Click="BtnClose_OnClick" HorizontalAlignment="Left" Margin="10,128,0,0" VerticalAlignment="Top" Width="141"/>
         <Label Content="Test" x:Name="lTest" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="64"/>
         <Label Content="Test1" x:Name="lTest1" HorizontalAlignment="Left" Margin="87,10,0,0" VerticalAlignment="Top" Width="64"/>
-        <TextBox x:Name ="tbLog" HorizontalAlignment="Left" Height="152" Margin="172,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="145"/>
+        <TextBox x:Name ="tbLog" HorizontalAlignment="Left" Height="152" Margin="167,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
 
     </Grid>
 </Window>
